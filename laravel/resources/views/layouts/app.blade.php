@@ -6,13 +6,18 @@
     <title>@yield('title', 'Мой сайт')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="antialiased font-sans bg-gray-100">
-@include('partials.header')
+<body
+    class="h-full bg-fixed bg-cover bg-center"
+    style="background-image: url('/images/earth.jpg')"
+>
+<div id="app" class="min-h-screen flex flex-col">
+    @include('partials.header')
 
-<main class="container mx-auto py-8">
-    @yield('content')
-</main>
+    <main class="flex-grow">
+        @yield('content')
+    </main>
 
-@include('partials.footer')
+    @include('partials.footer')
+</div>
 </body>
 </html>

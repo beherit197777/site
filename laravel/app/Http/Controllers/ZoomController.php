@@ -6,8 +6,19 @@ use Illuminate\Http\Request;
 
 class ZoomController extends Controller
 {
-    public function index()
+    /**
+     * Перенаправление на прямую ссылку Zoom
+     */
+    public function join()
     {
-        return view('zoom');
+        return redirect()->away('https://us02web.zoom.us/j/88474383951?pwd=U29oWFpkdDduczduTnAybENsRThBZz09#success');
+    }
+
+    /**
+     * Страница-инструкция «Как подключиться в Zoom»
+     */
+    public function instructions()
+    {
+        return view('zoom.instructions');
     }
 }
